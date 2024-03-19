@@ -30,15 +30,31 @@ public class Board {
     }
 
     public Boolean isInFavorOfO() {
-        return null;
+        for (int i = 0; i < matrix.length; i++) {
+            for (int j = 0; j < matrix[i].length; j++) {
+                if(matrix[i][0] == 'O' && matrix[i][1] == 'O' && matrix[i][2] == 'O'){
+                    return true;
+                } else if (matrix[0][j] == 'O' && matrix[1][j] == 'O' && matrix[2][j] == 'O') {
+                    return true;
+                } else if (matrix[0][0] == 'O' && matrix[1][1] == 'O' && matrix[2][2] == 'O') {
+                    return true;
+                } else if (matrix[0][2] == 'O' && matrix[1][1] == 'O' && matrix[2][0] == 'O') {
+                    return true;
+                }
+
+            }
+
+        }
+        return false;
     }
 
     public Boolean isTie() {
-        return null;
+        if(!isInFavorOfO() && !isInFavorOfX());
+        return true;
     }
 
     public String getWinner() {
-        return "";
+        return null;
     }
 
 }
